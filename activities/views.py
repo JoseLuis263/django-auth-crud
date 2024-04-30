@@ -76,7 +76,7 @@ def activity_detail(request, activity_id):
     if request.method == 'GET':
         activity = get_object_or_404(Activities, pk=activity_id)
         form = ActivitiesForm(instance=activity)
-        return render(request, 'activities_detail.html', {'activity': activity, 'form': form})
+        return render(request, 'activities_details.html', {'activity': activity, 'form': form})
     else:
         try:
             activity = get_object_or_404(Activities, pk=activity_id)
@@ -84,7 +84,7 @@ def activity_detail(request, activity_id):
             form.save()
             return redirect('activities')
         except ValueError:
-            return render(request, 'activities_detail.html', {'activity': activity, 'form': form, 'error': 'Error updating task.'})
+            return render(request, 'activities_details.html', {'activity': activity, 'form': form, 'error': 'Error updating task.'})
 
 @login_required
 def delete_activities(request, activity_id):
