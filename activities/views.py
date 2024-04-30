@@ -93,6 +93,8 @@ def signout(request):
     logout(request)
     return redirect('home')
 
+def about(request):
+    return render(request, 'about.html')
 
 def signin(request):
     if request.method == "GET":
