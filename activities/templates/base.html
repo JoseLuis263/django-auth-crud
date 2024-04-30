@@ -7,7 +7,7 @@
     <title>AMPF</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-green navbar-green">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
           <a class="navbar-brand" href="/">Asociación Mexicana de Profesionales Forestales AC</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,17 +18,18 @@
                 <li class="nav-item">
                     <a href="/" class="nav-link">Home</a>
                 </li>
+                
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a href="/activities" class="nav-link">Activities</a>
                 </li>
-                
-                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a href="/logout" class="nav-link">Logout</a>
                 </li>
                 <li class="nav-item">
                     <a href="/create/activities" class="nav-link">Create Activity</a>
                 </li>
+
                 {% endif %}
                 <li class="nav-item">
                     <a href="/about" class="nav-link">About</a>

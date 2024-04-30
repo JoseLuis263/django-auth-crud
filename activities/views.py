@@ -66,7 +66,7 @@ def create_activities(request):
             form.save()
             return redirect('activities')
         except ValueError:
-            return render(reuqest, 'create_activities.html', {
+            return render(request, 'create_activities.html', {
                 'form': ActivitiesForm,
                 'error': 'Please provide valida data'
             })
