@@ -63,9 +63,7 @@ def create_activities(request):
         try:
 
             form = ActivitiesForm(request.POST)
-            new_activity = form.save(commit=False)
-            new_activity.user = request.user
-            new_activity.save()
+            form.save()
             return redirect('activities')
         except ValueError:
             return render(reuqest, 'create_activities.html', {
