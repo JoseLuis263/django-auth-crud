@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 <main class="container">
   <div class="row">
     <div class="col-md-4 offset-md-4">
@@ -9,7 +10,9 @@
         class="card card-body"
       >
         <h1 class="text-center">Create Activities</h1>
-        {{error}} {% csrf_token %} {{form}}
+        {{error}} 
+        {% csrf_token %} 
+        {{form}}
         <button class="btn btn-primary">Save</button>
       </form>
     </div>
