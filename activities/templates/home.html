@@ -3,7 +3,6 @@
 {% block content%}
 <h1>Asociación Mexicana de Profesionales Forestales AC</h1>
 {% for activiti in activities %}
-<img src="{{ activiti.imagen.url }}" alt="{{ activiti.description }}">
 <li>{{activiti.description}}</li>
 {% endfor %}
 {% endblock %}

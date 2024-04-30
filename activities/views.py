@@ -46,7 +46,7 @@ def signup(request):
 
 @login_required
 def activities(request):
-    activity = Activities.objects.filter(user=request.user)
+    activity = Activities.objects.all()
     return render(request, 'activities.html', {
         'activity': activity
     })
