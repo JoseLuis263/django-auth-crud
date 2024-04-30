@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{activities.id}}
+
+{{error}}
+
+<form method="POST">
+  {% csrf_token %}
+  {{form.as_p}}
+
+  <button>
+    Update
+  </button>
+</form>
+
+
+<form action="{% url 'delete_activities' activities.id %}" method="POST">
+  {% csrf_token %}
+  <button>
+    delete
+  </button>
+</form>
+
+{% endblock %}

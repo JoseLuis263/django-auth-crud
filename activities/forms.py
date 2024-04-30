@@ -6,7 +6,7 @@ class ActivitiesForm(forms.ModelForm):
         model = Activities
         fields = ['imagen', 'description']
         widgets = {
-            'imagen': forms.FileInput(),
+            'image': forms.ClearableFileInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Write a description'})
             
         }

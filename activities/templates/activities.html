@@ -2,4 +2,18 @@
 
 {% block content%}
 <h1>Activities</h1>
+
+<ul>
+    {% for activity in activities %}
+    <li>
+      <a href="{% url 'activitie_detail' activity.id %}">
+        {% if activity.image %}
+        <strong>{{activity.description}}</strong>
+        {% else %} {{activity.id}} {{activity.description}} {% endif %}
+        <p>{{activity.description}}</p>
+
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 {% endblock %}

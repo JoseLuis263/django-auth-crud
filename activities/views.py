@@ -46,7 +46,11 @@ def signup(request):
 
 @login_required
 def activities(request):
-    return render(request, 'activities.html')
+    activity = Activities
+    return render(request, 'activities.html', {
+        'activity': activity
+    })
+
 
 @login_required
 def create_activities(request):
