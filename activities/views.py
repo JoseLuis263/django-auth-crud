@@ -70,7 +70,8 @@ def create_activities(request):
                 'form': ActivitiesForm,
                 'error': 'Please provide valida data'
             })
-
+            
+@login_required
 def activity_detail(request, activity_id):
     if request.method == 'GET':
         activity = get_object_or_404(Activities, pk=activity_id)
@@ -85,6 +86,12 @@ def activity_detail(request, activity_id):
         except ValueError:
             return render(request, 'activities_detail.html', {'activity': activity, 'form': form, 'error': 'Error updating task.'})
 
+@login_required
+def delete_activities(request, activity_id):
+    task = get_object_or_404(Activities, pk=activity_id)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('activities')
 
 @login_required
 def signout(request):
