@@ -26,5 +26,7 @@ urlpatterns = [
     path('logout/', views.signout, name='logout'),
     path('signin/', views.signin, name='signin'),
     path('create/activities/', views.create_activities, name= 'create_activities'),
+    path('activities/<int:activity_id>', views.activity_detail, name= 'activities_details'),
+    path('activities/<int:activity_id>/delete', views.delete_activities, name='delete_activities'),
     path('about/', views.about, name= 'about'),
 ]

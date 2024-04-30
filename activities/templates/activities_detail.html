@@ -16,7 +16,7 @@
 </form>
 
 
-<form action="{% url 'delete_activities' activities.id %}" method="POST">
+<form action="{% url 'delete_activities' activity.id %}" method="POST">
   {% csrf_token %}
   <button>
     delete
