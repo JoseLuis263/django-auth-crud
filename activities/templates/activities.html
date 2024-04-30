@@ -4,11 +4,11 @@
 <h1>Activities</h1>
 
 <ul>
-    {% for activity in activities %}
+    {% for activiti in activity %}
     <li>
       <a href="{% url 'activities_detail' activity.id %}">
         
-        {{activity.id}} {{activity.description}}
+        {{activiti.id}} {{activiti.description}}
 
 
       </a>
